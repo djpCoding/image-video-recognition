@@ -18,6 +18,7 @@ import urllib.request
 import moviepy.editor as moviepy
 
 st.title('Object Detection')
+st.subheader("Select the Options on the Sidebar")
 
 confidence = st.slider("Select the mimimum confidence for image recongnition", min_value = 0.00, max_value = 1.00, step = .01)
 
@@ -25,8 +26,7 @@ def main():
     st.sidebar.title('Options')
     data_source = st.sidebar.radio("Select input source:", ['From test set', 'Custom user upload'])
     option = st.sidebar.radio("Select input type:",['Image','Video'])
-    st.header("Object Detection")
-    st.subheader("Select the Options")
+
 #    if option == "Image":
 #        imageInput(data_source)
 #    elif option == "Video":
