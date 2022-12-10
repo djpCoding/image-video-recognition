@@ -1,18 +1,6 @@
 # YOLOv5 requirements
 # Usage: pip install -r requirements.txt
 
-'''
-import streamlit as st
-import torch
-from detect import detect
-from PIL import Image
-from io import *
-import glob
-from datetime import datetime
-import os
-import wget
-import time
-'''
 
 # Base ----------------------------------------
 matplotlib>=3.2.2
@@ -26,6 +14,8 @@ torch>=1.7.0
 torchvision>=0.8.1
 tqdm>=4.41.0
 protobuf<4.21.5  # https://github.com/ultralytics/yolov5/issues/8012
+streamlit_embedcode
+moviepy
 
 # Logging -------------------------------------
 tensorboard>=2.4.1
@@ -40,7 +30,8 @@ seaborn>=0.11.0
 # onnx>=1.9.0  # ONNX export
 # onnx-simplifier>=0.3.6  # ONNX simplifier
 # scikit-learn==0.19.2  # CoreML quantization
-# tensorflow>=2.4.1  # TFLite export
+ tensorflow>=2.4.1  # TFLite export
+ detect
 # tensorflowjs>=3.9.0  # TF.js export
 # openvino-dev  # OpenVINO export
 
