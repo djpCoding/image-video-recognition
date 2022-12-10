@@ -27,10 +27,10 @@ def main():
     option = st.sidebar.radio("Select input type:",['Image','Video'], disabled=True)
     st.header("Object Detection")
     st.subheader("Select the Options")
-    if option == "Image":
-        imageInput(data_source)
-    elif option == "Video":
-        videoInput(data_source)
+#    if option == "Image":
+#        imageInput(data_source)
+#    elif option == "Video":
+#        videoInput(data_source)
 
 main()
 
