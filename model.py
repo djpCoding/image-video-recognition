@@ -24,7 +24,7 @@ confidence = st.slider("Select the mimimum confidence for image recongnition", m
 def main():
     st.sidebar.title('Options')
     data_source = st.sidebar.radio("Select input source:", ['From test set', 'Custom user upload'])
-    option = st.sidebar.radio("Select input type:",['Image','Video'], disabled=True)
+    option = st.sidebar.radio("Select input type:",['Image','Video'])
     st.header("Object Detection")
     st.subheader("Select the Options")
 #    if option == "Image":
