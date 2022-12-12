@@ -47,7 +47,7 @@ st.subheader("Select the Options on the Sidebar")
 
 
 def imageInput(source):
-    confidence_bar = st.slider("Select the mimimum confidence for image recongnition", min_value = 0.00, max_value = 1.00, step = .01)
+    confidence_bar = st.slider("Select the mimimum confidence for image recongnition", min_value = 0.00, max_value = 1.00, step = .01, value=.7)
     if source == "User upload":
         image_file = st.file_uploader("Upload An Image", type =['png','jpeg','jpg','gif'])
         col1,col2 = st.columns(2)
