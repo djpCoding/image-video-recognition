@@ -15,17 +15,17 @@ import numpy as np
 #        net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 #    return net
 
-INPUT_WIDTH = 640
-INPUT_HEIGHT = 640
+#INPUT_WIDTH = 640
+#INPUT_HEIGHT = 640
 SCORE_THRESHOLD = 0.2
 NMS_THRESHOLD = 0.4
 CONFIDENCE_THRESHOLD = 0.4
 
-def detect(image, net):
-    blob = cv2.dnn.blobFromImage(image, 1/255.0, (INPUT_WIDTH, INPUT_HEIGHT), swapRB=True, crop=False)
-    net.setInput(blob)
-    preds = net.forward()
-    return preds
+#def detect(image, net):
+#    blob = cv2.dnn.blobFromImage(image, 1/255.0, (INPUT_WIDTH, INPUT_HEIGHT), swapRB=True, crop=False)
+#    net.setInput(blob)
+#    preds = net.forward()
+#    return preds
 
 #def load_capture():
 #    capture = cv2.VideoCapture("sample.mp4")
