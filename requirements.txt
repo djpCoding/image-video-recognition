@@ -16,6 +16,14 @@ tqdm>=4.41.0
 protobuf<4.21.5  # https://github.com/ultralytics/yolov5/issues/8012
 streamlit_embedcode
 moviepy
+objectDetection
+tensorflow-object-detection-api
+# yolov5-detect
+# pafy
+# yt-dlp
+# youtube_dl
+# scikit-image
+pytorchvideo
 
 # Logging -------------------------------------
 tensorboard>=2.4.1
