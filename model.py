@@ -35,13 +35,19 @@ from torchvision import transforms
 #from objectDetection import *
 
 st.title('Object Detection')
+st.markdown("This model runs using YOLOv5, one of the most popular vision AIs. The instance segmentation models are some of the fastest and most accurate in the world. The image processing available in this app is done in real time to demonstrate the speed and accuracy of the YOLOv5 vision AI.")
+st.markdown("The following graph shows the performance and latency of YOLOv5 compared to other models. This is done with the Microsoft COCO large image dataset and pytorch latency.")
+st.image('https://user-images.githubusercontent.com/61612323/204180385-84f3aca9-a5e9-43d8-a617-dda7ca12e54a.png')
+st.subheader("This project takes an image from an upload or from a set of test images and creates boxes around the image. There are preset test videos that can also be explored.")
+st.markdown("To begin exploring image detection in this project, follow the steps below and select options from the sidebar.")
 st.subheader("Select the Options on the Sidebar")
 
-confidence_bar = st.slider("Select the mimimum confidence for image recongnition", min_value = 0.00, max_value = 1.00, step = .01)
+
 
 
 
 def imageInput(source):
+    confidence_bar = st.slider("Select the mimimum confidence for image recongnition", min_value = 0.00, max_value = 1.00, step = .01)
     if source == "User upload":
         image_file = st.file_uploader("Upload An Image", type =['png','jpeg','jpg','gif'])
         col1,col2 = st.columns(2)
@@ -96,9 +102,10 @@ def imageInput(source):
 def videoInputFinal(source):
     if source == 'From test set':
         video_path = glob.glob('data/videos/*')
-        video_selection = st.slider('Select a video from the test set', min_value=1, max_value=len(video_path), step=1)
+        video_selection = st.selectbox('Select a video from the test set', ('Video 1 - Short', 'Video 2 - Long'))
+        # st.slider('Select a video from the test set', min_value=1, max_value=len(video_path), step=1)
 #        submit = st.button("Run prediction")
-        if video_selection == 1:
+        if video_selection == 'Video 1 - Short':
             video_path = open('data/videos/short_sample.mp4', 'rb')
             video_bytes = video_path.read()
             st.video(video_bytes)
@@ -109,7 +116,7 @@ def videoInputFinal(source):
                 video_bytes = video_path.read()
                 st.video(video_bytes)
                 st.write('Predicted Video')
-        elif video_selection == 2:
+        elif video_selection == 'Video 2 - Long':
             video_path = open('data/videos/long_sample.mp4', 'rb')
             video_bytes = video_path.read()
             st.video(video_bytes)
@@ -361,6 +368,7 @@ def main():
 
     if option == "Image":
         imageInput(data_source)
+
     elif option == "Video":
         videoInputFinal(data_source)
 
